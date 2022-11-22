@@ -1,0 +1,21 @@
+<camelRouteCoverage>
+<test>
+  <class>sample.camel.FooApplicationTest</class>
+  <method>shouldSayFoo</method>
+</test>
+<camelContextRouteCoverage id="MyCamel" exchangesTotal="1" totalProcessingTime="5">
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route customId="true" exchangesTotal="1" group="hello-group" id="hello" totalProcessingTime="5">
+        <from exchangesTotal="1" index="0" totalProcessingTime="5" uri="timer:hello?period={{timer.period}}"/>
+        <transform exchangesTotal="1" id="transform2" index="6" totalProcessingTime="0">
+            <method method="saySomething">myBean</method>
+        </transform>
+        <filter exchangesTotal="1" id="filter2" index="7" totalProcessingTime="4">
+            <simple>${body} contains 'foo'</simple>
+            <to exchangesTotal="1" id="to3" index="8" totalProcessingTime="3" uri="log:foo"/>
+        </filter>
+        <to exchangesTotal="1" id="to4" index="9" totalProcessingTime="0" uri="stream:out"/>
+    </route>
+</routes>
+</camelContextRouteCoverage>
+</camelRouteCoverage>

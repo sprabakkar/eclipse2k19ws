@@ -1,0 +1,23 @@
+package gradlebootdrools.rules
+
+import gradlebootdrools.model.Product
+
+dialect  "mvel"
+
+rule "Offer for Diamond"
+no-loop true
+salience 10 
+	when 
+		$product:Product(type == "diamond")
+	then
+		$product.setDiscount(15);
+end
+
+rule "Offer for Gold"
+no-loop true
+salience 11
+	when 
+		$product:Product(type == "gold")
+	then
+		$product.setDiscount(25);
+end

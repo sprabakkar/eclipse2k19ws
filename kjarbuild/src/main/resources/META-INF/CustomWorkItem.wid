@@ -1,0 +1,38 @@
+import org.drools.process.core.datatype.impl.type.ObjectDataType;
+import org.drools.process.core.datatype.impl.type.StringDataType;
+
+[
+  [
+    "name" : "HelloProcessExtension",
+     "parameters" : [
+         "param1" : new StringDataType(),
+         "param2" : new StringDataType(),
+         "param3" : new StringDataType(),
+      ],
+     
+     "icon" : "world.png",
+    "displayName" : "HelloProcessExtension"
+  ],
+   [
+    	"name" : "CreditLimitWorkItemHandler",
+    	"parameters" : [
+      	"ssdLimit" : new ObjectDataType(),
+   	     ],
+  	  "results" :[
+  	  "Result" : new ObjectDataType("java.util.Map")
+  	   ],
+  	  "icon" : "world.png",
+  	  "displayName" : "CreditLimitWorkItemHandler"
+  ],
+     [
+    	"name" : "JsonConverterWorkItemHandler",
+    	"parameters" : [
+      	"patientInfoIn" : new StringDataType(),
+   	     ],
+  	  "results" :[
+  	  "Result" : new ObjectDataType("java.util.Map")
+  	   ],
+  	  "icon" : "world.png",
+  	  "displayName" : "JsonConverterWorkItemHandler"
+  ]
+]
